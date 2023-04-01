@@ -1,8 +1,3 @@
-import vuetify from 'vite-plugin-vuetify'
-import { createResolver } from '@nuxt/kit'
-
-const { resolve } = createResolver(import.meta.url)
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     build: {
@@ -17,17 +12,6 @@ export default defineNuxtConfig({
         '@mdi/font/css/materialdesignicons.min.css',
         'vuetify/lib/styles/main.sass'
     ],
-    hooks: {
-        'vite:extendConfig': (config) => {
-            config.plugins?.push(
-                vuetify({
-                    styles: {
-                        configFile: resolve('./settings.scss')
-                    },
-                })
-            )
-        },
-    },
     imports: {
         dirs: [
             'stores',
@@ -44,7 +28,18 @@ export default defineNuxtConfig({
             ['defineStore', 'definePiniaStore'], // import { defineStore as definePiniaStore } from 'pinia'
         ],
     },
+    sourcemap: {
+        server: false,
+        client: false,
+    },
     vite: {
+        css: {
+            preprocessorOptions: {
+                scss: {
+                    additionalData: '@import "./assets/scss/settings.scss";',
+                },
+            },
+        },
         define: {
             'process.env.DEBUG': false,
         },
