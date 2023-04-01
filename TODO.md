@@ -1,6 +1,5 @@
 ## Tools
 - [ ] Vuetify
-- [ ] I18n
 - [ ] .env
 - [ ] event bus
 

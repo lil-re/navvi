@@ -2,7 +2,7 @@
 import {mount, VueWrapper} from "@vue/test-utils";
 import {createTestingPinia} from "@pinia/testing";
 import {vi} from "vitest";
-// import {createI18n} from "vue-i18n";
+import {createI18n} from "vue-i18n";
 // import {createVuetify} from "vuetify";
 // import * as components from "vuetify/components";
 // import * as directives from "vuetify/directives";
@@ -86,15 +86,14 @@ export function useMount<T>(options: MountOptions): VueWrapper {
                     //         sets: { mdi }
                     //     }
                     // }),
-                    // createI18n({
-                    //     legacy: false,
-                    //     globalInjection: true,
-                    //     locale: 'en',
-                    //     messages: {
-                    //         en: require('../i18n/en.json'),
-                    //         fr: require('../i18n/fr.json')
-                    //     }
-                    // })
+                    createI18n({
+                        legacy: false,
+                        globalInjection: true,
+                        locale: 'en',
+                        messages: {
+                            en: require('../i18n/en.json')
+                        }
+                    })
                 ],
             }
         }
