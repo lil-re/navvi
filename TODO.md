@@ -1,7 +1,5 @@
 ## Tools
-- [ ] Vuetify
 - [ ] .env
-- [ ] event bus
 
 ## Examples
 - [ ] Component

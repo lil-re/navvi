@@ -1,5 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+    app: {
+        head: {
+            script: [
+                { src: 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX', async: true }
+            ]
+        }
+    },
     build: {
         transpile: [
             '@apollo/client',
@@ -27,6 +34,12 @@ export default defineNuxtConfig({
             'defineStore', // import { defineStore } from 'pinia'
             ['defineStore', 'definePiniaStore'], // import { defineStore as definePiniaStore } from 'pinia'
         ],
+    },
+    runtimeConfig: { // https://v3.nuxtjs.org/guide/going-further/runtime-config/
+        public: {
+            API_URL: process.env.API_URL,
+            GTAG_ID: process.env.GTAG_ID,
+        }
     },
     sourcemap: {
         server: false,

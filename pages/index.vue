@@ -4,10 +4,10 @@
             Coucou
         </v-btn>
     </NuxtLayout>
-  </template>
-  
-  <script lang="ts">
-  export default {
-  }
-  </script>
+</template>
+
+<script lang="ts">
+export default {
+}
+</script>
   
