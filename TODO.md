@@ -1,6 +1,5 @@
 ## Examples
 - [ ] Component
-- [ ] Page
 - [ ] Store
 - [ ] Test
 
