@@ -9,7 +9,10 @@ query (
   posts(options: $options) {
     data {
       id
-      title
+      title,
+      user{
+        name
+      }
     }
     meta {
       totalCount

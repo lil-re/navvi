@@ -1,7 +1,7 @@
 ## Examples
-- [ ] Component
 - [ ] Store
 - [ ] Test
+- [ ] Code coverage
 
 ## Other
 - [ ] Add READMEs in folders

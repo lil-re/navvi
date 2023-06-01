@@ -1,21 +1,41 @@
 <template>
   <NuxtLayout name="default">
-    {{ posts }} 
+    <div
+      v-if="loading"
+      class="text-center"
+    >
+      <v-progress-circular
+        model-value="20"
+        color="primary"
+        indeterminate
+      />
+    </div>
+
+    <posts-list
+      v-else
+      :loading="loading"
+      :posts="posts"
+    />
   </NuxtLayout>
 </template>
 
 <script lang="ts">
 import {useNuxtApp} from '#imports'
 import {getAllPosts} from '~/composables/graphql'
+import PostsList from '~/components/posts/posts-list.vue'
 
 export default {
+  components: {
+    PostsList
+  },
   setup () {
     const {$apollo} = useNuxtApp()
-    const posts = ref([])
+    const loading = ref<boolean>(false)
+    const posts = ref<Array<Record<string, any>>>([])
 
     async function fetchPosts () {
-      console.log('coucou');
-      
+      loading.value = true
+
       try {
         const response = await $apollo.query({
           query: getAllPosts(),
@@ -35,11 +55,13 @@ export default {
       } catch (error) {
         console.error(error)
       }
+      loading.value = false
     }
 
     fetchPosts()
 
     return {
+      loading,
       posts
     }
   }
