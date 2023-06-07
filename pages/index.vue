@@ -21,7 +21,9 @@
 
 <script lang="ts">
 import {useNuxtApp} from '#imports'
+import {useMainStore} from '~/stores/main'
 import {getAllPosts} from '~/composables/graphql'
+import {Post} from '~/composables/types'
 import PostsList from '~/components/posts/posts-list.vue'
 
 export default {
@@ -30,8 +32,9 @@ export default {
   },
   setup () {
     const {$apollo} = useNuxtApp()
+    const mainStore = useMainStore()
     const loading = ref<boolean>(false)
-    const posts = ref<Array<Record<string, any>>>([])
+    const posts = ref<Array<Post>>([])
 
     async function fetchPosts () {
       loading.value = true
@@ -51,6 +54,7 @@ export default {
 
         if (response) {
           posts.value = response.data.posts.data
+          mainStore.setPosts(response.data.posts.data)
         }
       } catch (error) {
         console.error(error)

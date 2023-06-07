@@ -11,6 +11,7 @@ query (
       id
       title,
       user{
+        id
         name
       }
     }
