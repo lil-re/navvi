@@ -1,5 +1,4 @@
 ## Examples
-- [ ] Store
 - [ ] Test
 - [ ] Code coverage
 
