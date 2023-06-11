@@ -1,7 +1,7 @@
 import { VueWrapper } from '@vue/test-utils'
 import { describe, it, expect, beforeEach } from 'vitest'
 import { MountOptions, useMount } from '~/composables/tests'
-import PostsLists from '~/components/posts/PostsLists.vue'
+import PostsLists from '../../../components/posts/posts-list.vue'
 
 const posts = [{
   "id": "1",
@@ -46,7 +46,15 @@ describe('PostsLists', () => {
     const body = table.find('tbody')
     expect(body.exists()).toBeTruthy()
 
-    const row = body.findAll('tbody')
-    expect(row.length).toBe(3)
+    const rows = body.findAll('tr')
+    expect(rows.length).toBe(3)
+
+    rows.forEach((row, index) => {
+      const cells = row.findAll('td')
+      expect(cells[0].text()).toBe(posts[index].id)
+      expect(cells[1].text()).toBe(posts[index].title)
+      expect(cells[2].text()).toBe(posts[index].user.name)
+    })
   })
 })
+ 

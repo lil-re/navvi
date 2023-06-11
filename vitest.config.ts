@@ -18,6 +18,7 @@ export default defineConfig({
     alias: {
       '~': resolve(__dirname, '.'),
       '#imports': '<rootDir>/.nuxt/imports.d.ts',
+      '#app': '<rootDir>/.nuxt/imports.d.ts',
     },
   },
 })

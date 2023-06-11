@@ -1,5 +1,4 @@
 ## Examples
-- [ ] Test
 - [ ] Code coverage
 
 ## Other
