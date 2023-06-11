@@ -5,7 +5,7 @@ import {Post} from '~/composables/types'
 export const useMainStore = defineStore('main', {
   state: () => {
     return {
-      posts: <Array<Post>>[]
+      posts: <Array<Post>>[],
     }
   },
   getters: {

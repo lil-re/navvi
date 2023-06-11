@@ -1,3 +1,12 @@
 {
-    "hello": "Hello, {name}!"
+    "author": "Author",
+    "email": "Email",
+    "english": "English",
+    "french": "French",
+    "id": "ID",
+    "name": "Name",
+    "posts": "Posts",
+    "title": "Title",
+    "users": "Users",
+    "website": "Website"
 }
