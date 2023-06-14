@@ -1,6 +1,5 @@
 <template>
   <v-app-bar
-    color="white"
     density="compact"
   >
     <v-btn
@@ -17,12 +16,43 @@
     </v-btn>
 
     <v-spacer />
+
+    <v-btn
+      class="ml-2"
+      color="primary"
+      variant="tonal"
+      size="x-small"
+      icon
+    >
+      <v-icon size="x-large">
+        mdi-translate
+      </v-icon>
+    </v-btn>
+
+    <app-bar-theme-button />
+
+    <v-btn
+      class="ml-2"
+      color="primary"
+      variant="tonal"
+      size="x-small"
+      icon
+    >
+      <v-icon size="x-large">
+        mdi-account
+      </v-icon>
+    </v-btn>
   </v-app-bar>
 </template>
 
 <script>
+import AppBarThemeButton from './app-bar-theme-button.vue';
+
 export default {
   name: "AppBar",
+  components: {
+    AppBarThemeButton
+  },
   props: {
     drawer: Boolean
   },
