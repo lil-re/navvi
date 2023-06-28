@@ -3,9 +3,12 @@
     "email": "Email",
     "english": "English",
     "french": "French",
+    "home": "Home",
     "id": "ID",
     "name": "Name",
     "posts": "Posts",
+    "samplePage": "Sample page",
+    "settings": "Settings",
     "title": "Title",
     "users": "Users",
     "website": "Website"

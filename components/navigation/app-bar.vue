@@ -17,17 +17,7 @@
 
     <v-spacer />
 
-    <v-btn
-      class="ml-2"
-      color="primary"
-      variant="tonal"
-      size="x-small"
-      icon
-    >
-      <v-icon size="x-large">
-        mdi-translate
-      </v-icon>
-    </v-btn>
+    <app-bar-language-button />
 
     <app-bar-theme-button />
 
@@ -47,10 +37,12 @@
 
 <script>
 import AppBarThemeButton from './app-bar-theme-button.vue';
+import AppBarLanguageButton from './app-bar-language-button.vue';
 
 export default {
   name: "AppBar",
   components: {
+    AppBarLanguageButton,
     AppBarThemeButton
   },
   props: {

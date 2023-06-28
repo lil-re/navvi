@@ -3,8 +3,7 @@
     :model-value="drawer"
     @update:model-value="updateDrawer"
   >
-    
-
+  
     <v-divider></v-divider>
 
     <v-list
@@ -15,7 +14,7 @@
       <v-list-item
         v-for="(item, i) in items"
         :key="i"
-        :value="item"
+        :to="item.path"
         color="primary"
       >
         <template v-slot:prepend>
@@ -32,23 +31,33 @@
 </template>
   
 <script>
+import { defineEmits, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+
 export default {
   name: "NavigationMenu",
   props: {
     drawer: Boolean
   },
-  data () {
-    return {
-      items: [
-        { text: this.$t('home'), icon: 'mdi-home-outline' },
-        { text: this.$t('samplePage'), icon: 'mdi-poll' },
-        { text: this.$t('settings'), icon: 'mdi-cog-outline' }
-      ],
+  setup (props) {
+    const { drawer } = toRefs(props)
+    const emit = defineEmits(['update:drawer'])
+    const {t} = useI18n()
+
+    const items = computed(() => ([
+      { text: t('home'), icon: 'mdi-home-outline', path: '/' },
+      { text: t('samplePage'), icon: 'mdi-poll', path: '/sample-page' },
+      { text: t('settings'), icon: 'mdi-cog-outline', path: '/settings' }
+    ]))
+
+    function updateDrawer () {
+      emit('update:drawer', !drawer.value)
     }
-  },
-  methods: {
-    updateDrawer () {
-      this.$emit('update:drawer', !this.drawer)
+
+    return {
+      drawer,
+      items,
+      updateDrawer
     }
   }
 }

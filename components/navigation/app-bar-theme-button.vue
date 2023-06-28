@@ -8,12 +8,13 @@
     @click="toggleTheme"
   >
     <v-icon size="x-large">
-      mdi-moon-waning-crescent
+      {{ icon }}
     </v-icon>
   </v-btn>
 </template>
 
 <script>
+import { computed } from 'vue'
 import { useTheme } from 'vuetify'
 
 export default {
@@ -25,9 +26,11 @@ export default {
       return theme.global.name.value = theme.global.current.value.dark ? 'defaultTheme' : 'darkTheme'
     }
 
+    const icon = computed(() => theme.global.current.value.dark ? 'mdi-white-balance-sunny' : 'mdi-moon-waning-crescent')
+
     return {
-      theme,
-      toggleTheme
+      toggleTheme,
+      icon
     }
   },
 }

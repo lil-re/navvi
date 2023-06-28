@@ -3,9 +3,12 @@
     "email": "Email",
     "english": "Anglais",
     "french": "Français",
+    "home": "Accueil",
     "id": "ID",
     "name": "Nom",
     "posts": "Articles",
+    "samplePage": "Page d'exemple",
+    "settings": "Paramètres",
     "title": "Titre",
     "users": "Utilisateurs",
     "website": "Site internet"
