@@ -21,27 +21,19 @@
 
     <app-bar-theme-button />
 
-    <v-btn
-      class="ml-2"
-      color="primary"
-      variant="tonal"
-      size="x-small"
-      icon
-    >
-      <v-icon size="x-large">
-        mdi-account
-      </v-icon>
-    </v-btn>
+    <app-bar-profile-button />
   </v-app-bar>
 </template>
 
 <script>
 import AppBarThemeButton from './app-bar-theme-button.vue';
 import AppBarLanguageButton from './app-bar-language-button.vue';
+import AppBarProfileButton from './app-bar-profile-button.vue';
 
 export default {
   name: "AppBar",
   components: {
+    AppBarProfileButton,
     AppBarLanguageButton,
     AppBarThemeButton
   },
