@@ -1,4 +1,5 @@
 {
+    "about": "À propos",
     "author": "Auteur",
     "email": "Email",
     "english": "Anglais",
@@ -11,6 +12,7 @@
     "posts": "Articles",
     "profile": "Profil",
     "samplePage": "Page d'exemple",
+    "search": "Rechercher",
     "settings": "Paramètres",
     "title": "Titre",
     "users": "Utilisateurs",

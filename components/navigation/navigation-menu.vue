@@ -47,7 +47,7 @@ export default {
     const items = computed(() => ([
       { text: t('home'), icon: 'mdi-home-outline', path: '/' },
       { text: t('samplePage'), icon: 'mdi-poll', path: '/sample-page' },
-      { text: t('settings'), icon: 'mdi-cog-outline', path: '/settings' }
+      { text: t('about'), icon: 'mdi-cog-outline', path: '/about' }
     ]))
 
     function updateDrawer () {

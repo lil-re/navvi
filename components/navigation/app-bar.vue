@@ -15,6 +15,8 @@
       </v-icon>
     </v-btn>
 
+    <app-bar-search />
+
     <v-spacer />
 
     <app-bar-language-button />
@@ -26,6 +28,7 @@
 </template>
 
 <script>
+import AppBarSearch from './app-bar-search.vue';
 import AppBarThemeButton from './app-bar-theme-button.vue';
 import AppBarLanguageButton from './app-bar-language-button.vue';
 import AppBarProfileButton from './app-bar-profile-button.vue';
@@ -35,7 +38,8 @@ export default {
   components: {
     AppBarProfileButton,
     AppBarLanguageButton,
-    AppBarThemeButton
+    AppBarThemeButton,
+    AppBarSearch
   },
   props: {
     drawer: Boolean

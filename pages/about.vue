@@ -1,16 +1,11 @@
 <template>
   <NuxtLayout name="default">
-    Settings
+    About
   </NuxtLayout>
 </template>
 
 <script lang="ts">
-import PostsList from '~/components/posts/posts-list.vue'
-
 export default {
-  components: {
-    PostsList
-  },
   setup () {
     return {}
   }
