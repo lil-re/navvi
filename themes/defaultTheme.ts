@@ -2,8 +2,8 @@ import {ThemeDefinition} from "vuetify";
 
 export default {
     colors: {
-        primary: '#1FAFCC',
-        secondary: '#F7642F',
+        primary: '#AB1FDC',
+        secondary: '#FF41CA',
         background: '#ECFFFC',
         info: '#03A9F4',
         success: '#4CAF50',

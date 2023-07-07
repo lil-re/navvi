@@ -96,7 +96,7 @@
 </template>
 
 <script>
-import { ref, toRefs, defineEmits } from 'vue'
+import { ref, toRefs } from 'vue'
 import { useNuxtApp } from '#imports'
 // import AppBarSearchList from '~/components/shared/navigation/app-bar/search/app-bar-search-list.vue'
 
@@ -111,10 +111,9 @@ export default {
       default: false
     }
   },
-  setup (props) {
+  setup (props, { emit }) {
     const { modelValue } = toRefs(props)
     const { $apollo } = useNuxtApp()
-    const emit = defineEmits(['update:modelValue'])
 
     const timeout = ref(null)
     const loading = ref(false)

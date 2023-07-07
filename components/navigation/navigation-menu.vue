@@ -3,6 +3,14 @@
     :model-value="drawer"
     @update:model-value="updateDrawer"
   >
+
+    <div class="py-5">
+      <v-img
+        src="navi.png"
+        alt="navi"
+        class="logo"
+      />
+    </div>
   
     <v-divider></v-divider>
 
@@ -31,7 +39,7 @@
 </template>
   
 <script>
-import { defineEmits, computed } from 'vue'
+import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 export default {
@@ -39,10 +47,9 @@ export default {
   props: {
     drawer: Boolean
   },
-  setup (props) {
+  setup (props, { emit }) {
     const { t } = useI18n()
     const { drawer } = toRefs(props)
-    const emit = defineEmits(['update:drawer'])
 
     const items = computed(() => ([
       { text: t('home'), icon: 'mdi-home-outline', path: '/' },
@@ -62,4 +69,10 @@ export default {
   }
 }
 </script>
+
+<style>
+.logo {
+  height: 44px;
+}
+</style>
   
