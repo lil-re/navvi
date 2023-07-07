@@ -1,5 +1,6 @@
 {
     "about": "À propos",
+    "albums": "Albums",
     "author": "Auteur",
     "email": "Email",
     "english": "Anglais",
@@ -9,6 +10,7 @@
     "id": "ID",
     "logout": "Déconnexion",
     "name": "Nom",
+    "noResult": "Pas de résultat",
     "posts": "Articles",
     "profile": "Profil",
     "samplePage": "Page d'exemple",

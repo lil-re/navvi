@@ -30,6 +30,7 @@ query (
     data {
       id
       name,
+      email
     }
     meta {
       totalCount
@@ -38,7 +39,11 @@ query (
   posts(options: $options) {
     data {
       id
-      title,
+      title
+      user {
+        id
+        name
+      }
     }
     meta {
       totalCount
@@ -47,7 +52,11 @@ query (
   albums(options: $options) {
     data {
       id
-      title,
+      title
+      user {
+        id
+        name
+      }
     }
     meta {
       totalCount

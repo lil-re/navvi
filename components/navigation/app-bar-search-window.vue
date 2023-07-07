@@ -2,7 +2,7 @@
   <v-dialog
     :model-value="modelValue"
     :fullscreen="$vuetify.display.smAndDown"
-    max-width="700"
+    max-width="1000"
     @update:modelValue="updateModelValue"
   >
     <v-card :loading="loading">
@@ -46,12 +46,50 @@
         </v-row>
       </v-card-title>
 
-      <v-card-text v-if="hasResults">
-        <!-- <app-bar-search-list
-          :items="searchData"
-          :query="searchValue"
-          :loading="loading"
-        /> -->
+      <v-card-text>
+        <v-row>
+          <v-col
+          v-for="(value, key) in searchData"
+          :key="key"
+          cols="12"
+          md="4"
+        >
+          <div class="text-subtitle-1 text-uppercase font-weight-bold">
+            {{ $t(key) }}
+          </div>
+          <v-card
+            color="#FCE3E2"
+            variant="outlined"
+          >
+            <v-list
+              class="py-0"
+              dense
+            >
+              <template
+                v-for="(item, i) in value.data"
+                :key="i"
+              >
+                <v-divider v-if="i > 0" />
+                <v-list-item>
+                  <v-list-item-title>
+                    {{ item.name ?? item.title }}
+                  </v-list-item-title>
+                  <v-list-item-subtitle>
+                    {{ item.email ?? item.user.name }}
+                  </v-list-item-subtitle>
+                </v-list-item>
+              </template>
+
+              <div
+                v-if="value.data.length === 0"
+                class="text-center py-4"
+              >
+                {{ $t('noResult') }}
+              </div>
+            </v-list>
+          </v-card>
+        </v-col>
+        </v-row>
       </v-card-text>
     </v-card>
   </v-dialog>
@@ -80,7 +118,6 @@ export default {
 
     const timeout = ref(null)
     const loading = ref(false)
-    const hasResults = ref(false)
     const searchValue = ref('')
     const searchData = ref({})
 
@@ -88,7 +125,6 @@ export default {
       clearTimeout(timeout.value)
       
       timeout.value = setTimeout(async () => {
-        console.log(value)
         const response = await $apollo.query({
           query: getSearchData(),
           variables: {
@@ -99,7 +135,7 @@ export default {
             }
           }
         })
-        console.log(response);
+        searchData.value = response.data
       }, 500)
     }
 
@@ -110,7 +146,6 @@ export default {
     return {
       modelValue,
       loading,
-      hasResults,
       searchValue,
       searchData,
       search,
