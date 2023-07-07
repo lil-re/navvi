@@ -40,9 +40,9 @@ export default {
     drawer: Boolean
   },
   setup (props) {
+    const { t } = useI18n()
     const { drawer } = toRefs(props)
     const emit = defineEmits(['update:drawer'])
-    const {t} = useI18n()
 
     const items = computed(() => ([
       { text: t('home'), icon: 'mdi-home-outline', path: '/' },

@@ -21,3 +21,37 @@ query (
   }
 }
 `
+
+export const getSearchData = () => gql`
+query (
+  $options: PageQueryOptions
+) {
+  users(options: $options) {
+    data {
+      id
+      name,
+    }
+    meta {
+      totalCount
+    }
+  },
+  posts(options: $options) {
+    data {
+      id
+      title,
+    }
+    meta {
+      totalCount
+    }
+  },
+  albums(options: $options) {
+    data {
+      id
+      title,
+    }
+    meta {
+      totalCount
+    }
+  }
+}
+`

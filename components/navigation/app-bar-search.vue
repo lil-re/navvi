@@ -32,12 +32,19 @@
     >
       <v-icon size="x-large"> mdi-magnify </v-icon>
     </v-btn>
+
+    <app-bar-search-window v-model="dialog" />
   </div>
 </template>
 
 <script>
+import AppBarSearchWindow from './app-bar-search-window.vue'
+
 export default {
   name: "AppBarSearch",
+  components: {
+    AppBarSearchWindow
+  },
   data() {
     return {
       dialog: false

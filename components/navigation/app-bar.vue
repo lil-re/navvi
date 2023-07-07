@@ -15,9 +15,11 @@
       </v-icon>
     </v-btn>
 
-    <app-bar-search />
+    <app-bar-search v-if="$vuetify.display.mdAndUp" />
 
     <v-spacer />
+
+    <app-bar-search v-if="$vuetify.display.smAndDown" />
 
     <app-bar-language-button />
 
