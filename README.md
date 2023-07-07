@@ -1,6 +1,17 @@
-# Nuxt 3 Minimal Starter
+# NAVVI
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+#### Nuxt 3 + Apollo + Vuetify + Vitest
+
+## Installed packages
+
+- [Material Design Icons](https://pictogrammers.com/library/mdi/)
+- [Nuxt 3](https://nuxt.com/)
+- [Pinia](https://pinia.vuejs.org/)
+- [SASS](https://sass-lang.com/)
+- [Vitest](https://vitest.dev/)
+- [Vue Apollo](https://apollo.vuejs.org/)
+- [Vue I18n](https://vue-i18n.intlify.dev/)
+- [Vuetify 3](https://vuetifyjs.com/en/)
 
 ## Setup
 

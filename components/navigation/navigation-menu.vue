@@ -6,8 +6,8 @@
 
     <div class="py-5">
       <v-img
-        src="navi.png"
-        alt="navi"
+        src="navvi.png"
+        alt="navvi logo"
         class="logo"
       />
     </div>
@@ -72,7 +72,7 @@ export default {
 
 <style>
 .logo {
-  height: 44px;
+  height: 30px;
 }
 </style>
   

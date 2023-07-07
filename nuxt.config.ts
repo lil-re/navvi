@@ -18,7 +18,8 @@ export default defineNuxtConfig({
     },
     css: [
         '@mdi/font/css/materialdesignicons.min.css',
-        'vuetify/lib/styles/main.sass'
+        'vuetify/lib/styles/main.sass',
+        '@/assets/scss/main.scss'
     ],
     imports: {
         dirs: [
@@ -50,7 +51,7 @@ export default defineNuxtConfig({
         css: {
             preprocessorOptions: {
                 scss: {
-                    additionalData: '@import "./assets/scss/settings.scss";',
+                    additionalData: '@use "@/assets/scss/_vars.scss" as *;'
                 },
             },
         },
