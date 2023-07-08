@@ -13,6 +13,9 @@ export default defineConfig({
     deps: {
       inline: ["vuetify"],
     },
+    coverage: {
+      provider: 'v8'
+    },
   },
   resolve: {
     alias: {
