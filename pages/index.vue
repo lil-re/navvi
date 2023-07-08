@@ -20,8 +20,12 @@
         order-md="first"
       >
         <div class="text-h3 pb-4">
-          <p class="text-primary pacifico">NAVVI</p>
-          <p class="font-weight-bold">A complete and ready-to-use Nuxt 3 boilerplate</p>
+          <p class="text-primary pacifico">
+            NAVVI
+          </p>
+          <p class="font-weight-bold">
+            {{ $t('headline') }}
+          </p>
         </div>
         
         <v-btn
@@ -31,7 +35,12 @@
           href="https://github.com/lil-re/navvi"
           target="_blank"
         >
-          <strong>Github</strong>
+          <v-icon start>
+            mdi-github
+          </v-icon>
+          <strong>
+            Github
+          </strong>
         </v-btn>
       </v-col>
     </v-row>

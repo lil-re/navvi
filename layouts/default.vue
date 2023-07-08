@@ -15,6 +15,8 @@
 </template>
 
 <script lang="ts">
+import { ref, onMounted } from 'vue'
+import { useTheme } from 'vuetify'
 import AppBar from "../components/navigation/app-bar.vue";
 import NavigationMenu from "../components/navigation/navigation-menu.vue";
 
@@ -23,11 +25,20 @@ export default {
     AppBar,
     NavigationMenu
   },
-  data () {
+  setup () {
+    const theme = useTheme()
+    const drawer = ref(false)
+    
+    onMounted(() => {
+      if (window?.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        theme.global.name.value = 'darkTheme'
+      }
+    })
+
     return {
-      drawer: false
+      drawer
     }
-  }
+  },
 }
 </script>
   

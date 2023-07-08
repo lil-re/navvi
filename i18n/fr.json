@@ -1,10 +1,10 @@
 {
-    "about": "À propos",
     "albums": "Albums",
     "author": "Auteur",
     "email": "Email",
     "english": "Anglais",
     "french": "Français",
+    "headline": "Un kit de démarrage avec Nuxt 3, complet et prêt à l'usage",
     "helpCenter": "Support",
     "home": "Accueil",
     "id": "ID",
