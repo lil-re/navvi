@@ -15,7 +15,7 @@
 
 ## Setup
 
-Make sure to install the dependencies:
+Install dependencies:
 
 ```bash
 # yarn
@@ -34,6 +34,20 @@ Start the development server on http://localhost:3000
 
 ```bash
 npm run dev
+```
+
+## Tests
+
+Run tests :  
+
+```bash
+npm run tests
+```
+
+Run tests with code coverage :  
+
+```bash
+npm run coverage
 ```
 
 ## Production

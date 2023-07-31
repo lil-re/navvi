@@ -7,6 +7,7 @@ export default defineNuxtConfig({
                 { src: 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX', async: true }
             ]
         }
+        baseURL: '/nuxt-github-pages/'
     },
     build: {
         transpile: [
