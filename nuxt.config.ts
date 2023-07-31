@@ -1,6 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-    ssr: true,
     app: {
         head: {
             script: [
@@ -58,6 +57,8 @@ export default defineNuxtConfig({
         },
         define: {
             'process.env.DEBUG': false,
+            // fixed apollo client err
+            __DEV__: false,
         },
     },
 })
